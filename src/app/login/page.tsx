@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 import { useAuth } from "@/components/AuthProvider";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/";
@@ -40,7 +40,7 @@ export default function LoginPage() {
           photoURL: u.photoURL || "",
           createdAt: serverTimestamp(),
         },
-        { merge: true },
+        { merge: true }
       );
 
       router.replace(next);
@@ -59,11 +59,11 @@ export default function LoginPage() {
           Sign in with Google to continue.
         </div>
 
-        {error ? (
+        {error && (
           <div className="mt-4 text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg p-3">
             {error}
           </div>
-        ) : null}
+        )}
 
         <button
           type="button"
@@ -79,5 +79,13 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen grid place-items-center">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
