@@ -159,7 +159,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Review the [Next.js Documentation](https://nextjs.org/docs)
 - Open an issue on GitHub for specific problems
 
-## 🔄 Future Enhancements
+## Future Enhancements
 
 - [ ] Event editing and deletion
 - [ ] Event categories and tags
@@ -169,4 +169,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Analytics dashboard
 - [ ] Bulk operations
 - [ ] Export functionality
+
 
