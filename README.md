@@ -44,20 +44,7 @@ npm install
 3. Create a **Firestore Database** in test or production mode
 4. Get your Firebase configuration from Project Settings
 
-### 3. Environment Configuration
-
-Create a `.env.local` file in the project root:
-
-```env
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-```
-
-### 4. Run the Application
+### 3. Run the Application
 
 ```bash
 npm run dev
@@ -182,3 +169,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Analytics dashboard
 - [ ] Bulk operations
 - [ ] Export functionality
+
